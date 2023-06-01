@@ -14,6 +14,7 @@ export class App extends React.Component {
       { id: 'id-2', name: 'Maksim Bekovikon', number: '063-458-00-77' },
       { id: 'id-3', name: 'Marta Sifurukova', number: '050-489-66-44' },
       { id: 'id-4', name: 'Anna Kuhta', number: '0564-4558-52' },
+      { id: 'id-5', name: 'Anton Kuhta', number: '0564-4521-99' },
     ],
     filter: '',
   };
