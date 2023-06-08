@@ -6,10 +6,13 @@ export const Form = styled.div`
   margin-bottom: 30px;
 
   h1 {
+    width:100%;
     font-size: 24px;
+    margin-left: 100px;
   }
 
   h2 {
-    font-size: 16px;
+    font-size: 20px;
+    margin-left: 120px;
   }
 `;

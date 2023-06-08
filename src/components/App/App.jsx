@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 import { nanoid } from 'nanoid';
 import { Form } from './App.styled';
@@ -6,18 +6,27 @@ import { Filter } from '../Filter';
 import { ContactForm } from 'components/ContactForm/';
 import { ContactList } from 'components/ContactList/';
 
-export class App extends React.Component {
+export class App extends Component {
   
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Eduard Fury', number: '098-354-05-00' },
-      { id: 'id-2', name: 'Maksim Bekovikon', number: '063-458-00-77' },
-      { id: 'id-3', name: 'Marta Sifurukova', number: '050-489-66-44' },
-      { id: 'id-4', name: 'Anna Kuhta', number: '0564-4558-52' },
-      { id: 'id-5', name: 'Anton Kuhta', number: '0564-4521-99' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  componentDidMount(){
+    const initialContact = localStorage.getItem('contact');
+    if (initialContact){
+      const parsedContact = JSON.parse(initialContact);
+      this.setState({
+        contacts: parsedContact,
+      })}
+  }
+
+  componentDidUpdate(_, prevState){
+    if (prevState.contact !== this.state.contacts){
+      localStorage.setItem('contact', JSON.stringify(this.state.contacts));
+      }
+    }
 
   deleteContact = contactId => {
     this.setState(prevState => ({
@@ -46,16 +55,17 @@ export class App extends React.Component {
   };
 
   getVisibleContacts = () => {
-    const { filter, contacts } = this.state;
+    const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
+
   render() {
     return (
       <Form>
-        <h1>Phonebook </h1>
+        <h1>Phonebook</h1>
         <ContactForm submitProp={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter filter={this.state.filter} onChange={this.changeFilter} />
