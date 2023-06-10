@@ -1,10 +1,10 @@
 import { Component } from 'react';
-
 import { nanoid } from 'nanoid';
 import { Form } from './App.styled';
 import { Filter } from '../Filter';
 import { ContactForm } from 'components/ContactForm/';
 import { ContactList } from 'components/ContactList/';
+import { Notify } from 'notiflix';
 
 export class App extends Component {
   
@@ -37,7 +37,7 @@ export class App extends Component {
   formSubmitHandler = data => {
     this.setState(prevState => {
       if (prevState.contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
-        alert(`${data.name} is already in contacts`);
+        Notify.warning(`${data.name} is already in contacts`);
         return;
       } else {
         return {
