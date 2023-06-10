@@ -5,6 +5,7 @@ import { Filter } from '../Filter';
 import { ContactForm } from 'components/ContactForm/';
 import { ContactList } from 'components/ContactList/';
 import { Notify } from 'notiflix';
+import { ParticiplesBackgroud } from 'components/ParticlesBackground/ParticlesBackground';
 
 export class App extends Component {
   
@@ -64,7 +65,8 @@ export class App extends Component {
 
   render() {
     return (
-      <Form>
+        <Form>
+        <ParticiplesBackgroud />
         <h1>Phonebook</h1>
         <ContactForm submitProp={this.formSubmitHandler} />
         <h2>Contacts</h2>
