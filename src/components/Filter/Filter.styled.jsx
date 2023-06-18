@@ -1,18 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledFilter = styled.div`
-  font-size: 16px;
+export const Label = styled.label`
+  margin-bottom: 2px;
+`;
 
-  label {
-    margin-bottom: 2px;
-  }
-
-  input {
-    display: block;
-    border: 1ps solid grey;
-    margin-top: 10px;
-    height: 35px;
-    width: 310px;
-    font-size: 24px;
-  }
+export const Input = styled.input`
+  display: block;
+  border: 1ps solid grey;
+  margin-top: 10px;
+  height: 35px;
+  width: 310px;
+  font-size: 24px;
 `;
