@@ -35,10 +35,10 @@ export const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 1s ease-out;
-  &:hover,
-  &:focus{
-    background-color: #46c4ee;
+  transition: background-color 2s ease-out;
 
+  &:hover, &:focus{
+    background-color: #88b4f1;
+    color:#fffff;
   }
-`;
+  `;
