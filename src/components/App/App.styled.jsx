@@ -1,13 +1,23 @@
 import styled from 'styled-components';
 
-export const FormBox = styled.div`
-  margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  h1 {
-    font-size: 24px;
-  }
-  h2 {
-    font-size: 16px;
-  }
+export const Container = styled.div`
+  width: 400px;
+  padding: 5px;
+  /* margin: 0 auto; */
+`;
+
+export const Wrapper = styled.div`
+  text-align: center;
+  font-size: 20px;
+  color:#fffff;
+`;
+
+export const Title = styled.h1`
+  text-align: center;
+  
+`;
+
+export const SubTitle = styled.h2`
+  text-align: center;
+  color:#fffff;
 `;

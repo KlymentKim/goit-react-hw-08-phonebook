@@ -1,32 +1,31 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import ContactItem from '../ContactItem/ContactItem';
-import { StyledContacts } from './ContactList.styled';
+import { List, Item } from './ContactList.styled';
+// import { ReactComponent as DeleteIcon } from '../icons/delete.svg';
+import {TiDelete} from 'react-icons/ti';
 
-export default function ContactsList ({ contacts, onDelete }) {
+import { useSelector, useDispatch } from 'react-redux';
+import { getVisibleContacts } from 'redux/selectors';
+import { removeContact } from 'redux/contactsSlice';
+
+// Компонент списка контактов
+const ContactList = () => {
+  const contacts = useSelector(getVisibleContacts);
+  const dispatch = useDispatch();
+  const handleDelete = () => dispatch(removeContact());
   return (
-    <div>
-      <StyledContacts>
-        {contacts.map(({ id, name, number }) => (
-          <ContactItem
-            key={id}
-            id={id}
-            name={name}
-            number={number}
-            onDelete={onDelete}
-          />
-        ))}
-      </StyledContacts>
-    </div>
+    <List>
+      {contacts.map(contact => (
+        <Item key={contact.id}>
+          {contact.name + ' : ' + contact.number}
+          {
+            // Кнопка удаления контакта
+            <TiDelete style={{cursor:'pointer'}} onClick={handleDelete} />
+           
+          }
+        </Item>
+      ))}
+    </List>
   );
 };
 
-ContactsList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
-    })).isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
+export default ContactList;

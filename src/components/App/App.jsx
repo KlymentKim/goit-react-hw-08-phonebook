@@ -1,73 +1,30 @@
-import { useState, useEffect } from 'react';
-import { FormBox } from './App.styled';
-import { nanoid } from 'nanoid';
-import Form from '../Form/Form';
+import { getContacts } from 'redux/selectors';
+import { useSelector } from 'react-redux';
+
+import { Container, SubTitle, Wrapper } from './App.styled';
+import ContactForm from '../ContactForm/ContactForm';
+import ContactList from '../ContactList/ContactList';
 import Filter from '../Filter/Filter';
-import ContactsList from '../ContactList/ContactList';
 
-export function App() {
-  const [contacts, setContacts] = useState([]);
-  const [filter, setFilter] = useState('');
-
-  useEffect(() => {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-
-    if (parsedContacts) {
-      setContacts(parsedContacts);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
-
-  const addContact = ({ name, number }) => {
-    const contact = {
-      id: nanoid(),
-      name,
-      number,
-    };
-
-    const existingContact = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-
-    if (existingContact) {
-      alert(`${name} is already in contacts`);
-    } else {
-      setContacts([...contacts, contact]);
-    }
-  };
-
-  const onFilterChange = e => {
-    setFilter(e.currentTarget.value);
-  };
-
-  const getFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  };
-
-  const onDeleteContact = id => {
-    setContacts(prevState => prevState.filter(contact => contact.id !== id));
-  };
+export const App = () => {
+  const contacts = useSelector(getContacts);
 
   return (
-    <FormBox>
+    <Container>
       <h1>Phonebook</h1>
-      <Form onSubmit={addContact} />
-
-      <h2>Contacts</h2>
-      <Filter value={filter} onChange={onFilterChange} />
-      <ContactsList
-        contacts={getFilteredContacts()}
-        onDelete={onDeleteContact}
-      />
-    </FormBox>
+      <ContactForm />
+      <SubTitle>Contacts</SubTitle>
+      {contacts.length > 0 ? (
+        // Если есть контакты, показывается компонент фильтрации
+        <Filter />
+      ) : (
+        // Если нет контактов, выводится сообщение об отсутствии контактов
+        <Wrapper>Your phonebook is empty. Add first contact!</Wrapper>
+      )}
+      {contacts.length > 0 && (
+        // Если есть контакты, показывается компонент списка контактов
+        <ContactList />
+      )}
+    </Container>
   );
-}
-
+};
