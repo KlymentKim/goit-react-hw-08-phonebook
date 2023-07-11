@@ -10,6 +10,7 @@ export const App = () => {
   const contacts = useSelector(getContacts);
 
   return (
+   
     <Container>
       <Title>Phonebook</Title>
       <ContactForm />
