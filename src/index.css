@@ -1,7 +1,7 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-  background: url(../public/bg_phone.jpg) center / cover no-repeat;
+  background: url(../public/image/bg_phone.jpg) center / cover no-repeat;
   min-height: 100vh;
   color:#ffffff;
 }
