@@ -14,8 +14,8 @@ const ContactList = () => {
       {contacts.map(contact => (
         <Item key={contact.id}>
           {contact.name + ' : ' + contact.number}
-          {
-          <TiDelete style={{cursor:'pointer'}} onClick={() => dispatch(deleteContacts(contact.id))} />          
+          {<TiDelete style={{cursor:'pointer'}}
+           onClick={() => dispatch(deleteContacts(contact.id))} />          
           }
         </Item>
       ))}
