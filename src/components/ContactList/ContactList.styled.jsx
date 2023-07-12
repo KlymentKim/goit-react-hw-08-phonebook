@@ -23,4 +23,12 @@ export const Item = styled.li`
   justify-content: space-between;
   font-size: 20px;
 `;
-
+export const Button = styled.button`
+  padding: 4px 8px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 4px 8px;
+  border: 3px solid #f08080;
+  display: flex;
+  align-items: center;
+`;
