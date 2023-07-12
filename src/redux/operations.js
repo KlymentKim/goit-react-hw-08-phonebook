@@ -3,7 +3,6 @@ import axios from 'axios';
 
 // Встановлення базового URL для axios
 axios.defaults.baseURL = 'https://64ae6308c85640541d4cf69e.mockapi.io';
-// axios.defaults.baseURL = 'https://64a199d00079ce56e2db3eeb.mockapi.io';
 
 const path = '/contacts'
 
