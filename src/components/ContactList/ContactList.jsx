@@ -1,7 +1,5 @@
 import React from 'react';
-// import { List, Item, Button } from './ContactList.styled';
 import { List, Item } from './ContactList.styled';
-// import { ReactComponent as DeleteIcon } from '../icons/delete.svg';
 import {TiDelete} from 'react-icons/ti';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectVisibleContacts } from 'redux/selectors';
@@ -17,10 +15,7 @@ const ContactList = () => {
         <Item key={contact.id}>
           {contact.name + ' : ' + contact.number}
           {
-            // Кнопка видалення контакту
-           
-              <TiDelete style={{cursor:'pointer'}} onClick={() => dispatch(deleteContacts(contact.id))} />
-                    
+          <TiDelete style={{cursor:'pointer'}} onClick={() => dispatch(deleteContacts(contact.id))} />          
           }
         </Item>
       ))}

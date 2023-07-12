@@ -1,10 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Встановлення базового URL для axios
-// axios.defaults.baseURL = 'https://649496f90da866a9536803ee.mockapi.io';
 axios.defaults.baseURL = 'https://64ad3c27b470006a5ec594cd.mockapi.io';
-
 
 // Створення асинхронної Thunk-дії fetchContacts
 export const fetchContacts = createAsyncThunk(
@@ -25,10 +23,10 @@ export const fetchContacts = createAsyncThunk(
 // Створення асинхронної Thunk-дії addContacts
 export const addContacts = createAsyncThunk(
   'contacts/addContacts', // Унікальний рядок, що ідентифікує цю дію
-  async ({ name, number }, thunkAPI) => {
+  async (contacts , thunkAPI) => {
     try {
       // Надсилання POST-запиту на '/contacts' з даними { name, number }
-      const response = await axios.post('/contacts', { name, number });
+      const response = await axios.post('/contacts', contacts);
       // Повернення отриманих даних
       return response.data;
     } catch (error) {

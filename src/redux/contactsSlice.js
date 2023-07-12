@@ -13,7 +13,11 @@ const getActions = type =>
   isAnyOf(fetchContacts[type], addContacts[type], deleteContacts[type]);
 
 // Початковий стан для slice contactsSlice
-const initialState = { items: [], isLoading: false, error: null };
+const initialState = { 
+  items: [], 
+  isLoading: false,
+   error: null
+ };
 
 // Створення slice для керування контактами
 const contactsSlice = createSlice({
