@@ -2,9 +2,11 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Встановлення базового URL для axios
-axios.defaults.baseURL = 'https://64ad3c27b470006a5ec594cd.mockapi.io';
+axios.defaults.baseURL = 'https://64ae6308c85640541d4cf69e.mockapi.io/api/v3';
 // axios.defaults.baseURL = 'https://64a199d00079ce56e2db3eeb.mockapi.io';
+
 const path = '/contacts'
+
 // Thunk-дії fetchContacts - одержання масиву контактів (метод GET) запитом.
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll', // Унікальний рядок, що ідентифікує цю дію
@@ -24,10 +26,10 @@ export const fetchContacts = createAsyncThunk(
 // Створення асинхронної Thunk-дії addContacts
 export const addContacts = createAsyncThunk(
   'contacts/addContacts', // Унікальний рядок, що ідентифікує цю дію
-  async (contacts, thunkAPI) => {
+  async (addNewContacts, thunkAPI) => {
     try {
       // Надсилання POST-запиту на '/contacts' з даними { name, number }
-      const response = await axios.post(path, contacts);
+      const response = await axios.post(path, addNewContacts);
       // Повернення отриманих даних
       return response.data;
     } catch (error) {
