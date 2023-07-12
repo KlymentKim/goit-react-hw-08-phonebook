@@ -5,6 +5,7 @@ import{ IoIosAdd } from 'react-icons/io';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContacts } from '../../redux/operations';
+import Notiflix from 'notiflix';
 
 // Генерация уникальных идентификаторов для полей формы.
 const nameInputId = nanoid();
@@ -27,7 +28,8 @@ const ContactForm = () => {
 
     // Проверяет, существует ли контакт с таким же именем в списке контактов. Если контакт уже существует, выводится предупреждение.
     if (isInContacts) {
-      alert(`${name} is already in contacts`);
+      Notiflix.Notify.info(`${name} is already in contacts`,
+      {position:'left-top',cssAnimationDuration: 300 });
       return;
     }
 
