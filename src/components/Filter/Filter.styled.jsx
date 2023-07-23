@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
-export const Div = styled.div`
-  margin-bottom: 15px;
-  
+export const Wrapper = styled.div`
+  margin: 20px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const Label = styled.label`
-  color: #ffffff;
+  color: #000000;
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const Input = styled.input`
@@ -16,10 +19,5 @@ export const Input = styled.input`
   padding: 10px;
   margin: 0 auto;
   border-radius: 4px;
-  font: inherit;
-  border: 3px solid #4323d4;
-  background-color: transparent;
-  color: #ebe8e8;
-  outline:none;
-  
+  border: 3px solid #f08080;
 `;

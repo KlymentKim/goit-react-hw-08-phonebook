@@ -8,13 +8,13 @@ export const List = styled.ul`
   padding: 12px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #4323d4;
-  list-style: none;
+  border: 3px solid #f08080;
+  margin: 0 auto;
 `;
 
 export const Item = styled.li`
-  background-color: color: #ebe8e8;
-  border: 3px solid #4323d4;
+  background-color: #ffffff;
+  border: 3px solid #f08080;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 5px;
@@ -24,3 +24,16 @@ export const Item = styled.li`
   font-size: 20px;
 `;
 
+export const Button = styled.button`
+  padding: 4px 8px;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 4px 8px;
+  border: 3px solid #f08080;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #b9bcd3;
+  }
+`;

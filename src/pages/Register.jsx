@@ -1,7 +1,11 @@
-import React from 'react'
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
-export const Register = () => {
+// Компонент Register відповідає за відображення сторінки реєстрації
+export default function Register() {
   return (
-    <div>Register</div>
-  )
+    <>
+      <title>Registration</title>
+      <RegisterForm /> {/* Відображення форми для реєстрації */}
+    </>
+  );
 }

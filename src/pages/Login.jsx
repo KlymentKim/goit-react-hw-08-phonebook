@@ -1,7 +1,11 @@
-import React from 'react'
+import { LoginForm } from 'components/LoginForm/LoginForm';
 
-export const Login = () => {
+// Компонент Login відповідає за відображення сторінки входу в систему
+export default function Login() {
   return (
-    <div>Login</div>
-  )
+    <>
+      <title>Login</title>
+      <LoginForm /> {/* Відображення форми для входу в систему */}
+    </>
+  );
 }

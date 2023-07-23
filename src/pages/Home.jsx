@@ -1,7 +1,11 @@
-import React from 'react'
+import { Wrapper, Title } from './Home.styled';
 
+// Компонент Home відповідає за відображення домашньої сторінки
 export default function Home() {
   return (
-    <div>Home</div>
-  )
+    <Wrapper>
+      <Title>Welcome to Phonebook!</Title>{' '}
+      {/* Відображення заголовка на домашній сторінці */}
+    </Wrapper>
+  );
 }
