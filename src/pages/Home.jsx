@@ -4,7 +4,7 @@ import { Wrapper, Title } from './Home.styled';
 export default function Home() {
   return (
     <Wrapper>
-      <Title>Welcome to Phonebook!</Title>{' '}
+      <Title>Welcome <br/> to <br/> Phonebook!</Title>{' '}
       {/* Відображення заголовка на домашній сторінці */}
     </Wrapper>
   );

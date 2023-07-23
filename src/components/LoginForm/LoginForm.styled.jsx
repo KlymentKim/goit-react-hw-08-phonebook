@@ -6,7 +6,8 @@ export const Form = styled.form`
   width: 400px;
   padding: 12px;
   background-color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #f08080;
+  box-shadow: 0px 15px 10px -15px #111;   
+  background-color: #f5f5f5;
   border-radius: 4px;
   margin: 0 auto;
 `;
@@ -15,7 +16,7 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
-  color: #f08080;
+  color:  #111;
   font-size: 20px;
 `;
 
@@ -40,5 +41,6 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #b9bcd3;
+    color: #171718;
   }
 `;

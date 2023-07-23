@@ -1,14 +1,10 @@
-import { Comment } from 'react-loader-spinner';
+import { FallingLines } from 'react-loader-spinner';
 
 export const Loader = () => (
-  <Comment
-    visible={true}
-    height="80"
-    width="80"
-    ariaLabel="comment-loading"
-    wrapperStyle={{}}
-    wrapperClass="comment-wrapper"
-    color="#fff"
-    backgroundColor="#F4442E"
-  />
+<FallingLines
+  color="#4fa94d"
+  width="100"
+  visible={true}
+  ariaLabel='falling-lines-loading'
+/>
 );
