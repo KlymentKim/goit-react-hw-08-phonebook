@@ -32,8 +32,6 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   border-radius: 4px;
-  border: 3px solid #f08080;
-  color: #f08080;
   font-size: 20px;
   display: flex;
   align-items: center;
