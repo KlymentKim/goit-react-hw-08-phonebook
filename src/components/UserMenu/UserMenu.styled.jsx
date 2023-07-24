@@ -17,7 +17,6 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   border-radius: 4px 8px;
-  border: 3px solid #f08080;
   color: #f08080;
   font-size: 20px;
   display: flex;
@@ -27,5 +26,6 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #b9bcd3;
+    color: #171718;
   }
 `;

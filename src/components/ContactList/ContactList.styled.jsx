@@ -29,11 +29,11 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   border-radius: 4px 8px;
-  border: 3px solid #f08080;
   display: flex;
   align-items: center;
 
   &:hover {
     background-color: #b9bcd3;
+    color: #171718;
   }
 `;
