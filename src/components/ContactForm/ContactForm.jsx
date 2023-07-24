@@ -5,7 +5,6 @@ import { Filter } from 'components/Filter/Filter';
 import { selectContacts } from 'redux/contacts/selectors';
 import { addContacts } from 'redux/contacts/operations';
 import { Form, Label, Input, Button } from './ContactForm.styled';
-import { ReactComponent as AddIcon } from 'icons/add.svg';
 
 //Генерація унікальних ідентифікаторів для полів форми.
 const nameInputId = nanoid();
