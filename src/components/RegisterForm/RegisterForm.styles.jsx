@@ -38,7 +38,6 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
 
-
   &:hover {
     background-color: #b9bcd3;
     color: #171718;

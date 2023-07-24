@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
 
 export const Text = styled.p`
   font-weight: 700;
-  color: #f08080;
   font-size: 20px;
 `;
 
@@ -17,7 +16,6 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   border-radius: 4px 8px;
-  color: #f08080;
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -25,7 +23,7 @@ export const Button = styled.button`
   margin: 10px 10px;
 
   &:hover {
-    background-color: #b9bcd3;
-    color: #171718;
+    /* background-color: #010102; */
+    color: #f83c0c;
   }
 `;

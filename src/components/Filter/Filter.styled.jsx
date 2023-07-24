@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-`;
+  `;
 
 export const Label = styled.label`
   color: #000000;
@@ -19,5 +19,4 @@ export const Input = styled.input`
   padding: 10px;
   margin: 0 auto;
   border-radius: 4px;
-  border: 3px solid #f08080;
-`;
+  `;

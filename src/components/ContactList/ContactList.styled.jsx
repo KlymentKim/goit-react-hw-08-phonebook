@@ -8,13 +8,13 @@ export const List = styled.ul`
   padding: 12px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #f08080;
-  margin: 0 auto;
+  box-shadow: 0px 15px 10px -15px #111;   
+  background-color: #f5f5f5;
+   margin: 0 auto;
 `;
 
 export const Item = styled.li`
   background-color: #ffffff;
-  border: 3px solid #f08080;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 5px;

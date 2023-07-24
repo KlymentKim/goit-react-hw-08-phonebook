@@ -90,8 +90,7 @@ export const ContactForm = () => {
         </Label>
 
         <Button type="submit">
-          <AddIcon fill="#f08080" width="25" height="25" />
-          Add contact{' '}
+                 Add contact{' '}
         </Button>
       </Form>
       <Filter />
